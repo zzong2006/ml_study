@@ -18,7 +18,9 @@ $$
 $$
 
 
-Now, In LDA we need to normalize |\widetilde\{\mu_1\}-\widetilde\{\mu_2\}|. Let y_i=v^\{T\}x_i be the projected samples, then scatter for the samples of c1 is:
+Now, In LDA we need to normalize $|\widetilde{\mu_1}-\widetilde{\mu_2}|$. 
+
+Let $y_i=v^{T}x_i$ be the projected samples, then scatter for the samples of $c_1$ is:
 
 $$
 \widetilde{s_1^2}=\sum_{y_i \in c_1}\left(y_i-\mu_1\right)^2
@@ -39,13 +41,15 @@ J(v)=\frac{\overline{\mu_1}-\overline{\mu_2}}{s_1^2+s_2^2}
 $$
 
 
-For maximizing the above equation we need to find a projection vector that maximizes the difference of means of reducing the scatters of both classes. Now, scatter matrix of s1 and s2 of classes c1 and c2 are:
+For maximizing the above equation we need to find a projection vector that maximizes the difference of means of reducing the scatters of both classes. 
+
+Scatter matrix of $s_1$ and $s_2$ of classes $c_1$ and $c_2$ are:
 
 $$
 s_1=\sum_{x_i \in c_1}\left(x_i-\mu_1\right)\left(x_i-\mu_1\right)^T
 $$
 
-and s2
+and $s_2$ is:
 
 $$
 s_2=\sum_{x_i \in c_2}\left(x_i-\mu_2\right)\left(x_i-\mu_2\right)^T
