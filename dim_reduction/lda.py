@@ -44,14 +44,15 @@ def lda_from_scratch(dataset: DatasetForLDA):
 
     # lda assumption: covariance matrix is the same for both classes
     var_mat_1 = np.cov(class_1_x.T)
-    np.testing.assert_allclose(var_mat_1, class_1_x.T @ class_1_x / len(class_1_x))
+    class_1_x_centered = class_1_x - mu_1
+    np.testing.assert_allclose(var_mat_1, class_1_x_centered.T @ class_1_x_centered)
     var_mat_2 = np.cov(class_2_x.T)
     
     pass
 
-def train_lda_from_sklearn(X, y):
+def train_lda_from_sklearn(dataset: DatasetForLDA):
     # Split the dataset into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(dataset.train_X, dataset.train_y, test_size=0.3, random_state=42)
 
     # Initialize the LDA model
     lda = LinearDiscriminantAnalysis()
