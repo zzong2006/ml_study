@@ -20,7 +20,9 @@ def load_data(
     train_dataset: ClassificationDataset = None,
 ) -> ClassificationDataset:
     if train_dataset is None and not is_train and preprocess:
-        raise ValueError("train_dataset must be provided for normalization when test dataset is provided")
+        raise ValueError(
+            "train_dataset must be provided for normalization when test dataset is provided"
+        )
 
     df = pd.read_csv(
         "data/train.csv" if is_train else "data/test.csv",
@@ -83,4 +85,3 @@ def load_data(
     logger.debug(X.head())
 
     return ClassificationDataset(X, y, numeric_mean, numeric_std)
-

@@ -6,6 +6,7 @@ from loguru import logger
 
 from data import load_data
 
+
 def main():
     dataset = load_data()
 
